@@ -64,7 +64,7 @@
 
 #cuerpo-reservar {
   height: 800px;
-  background-image: url('/images/imagenesdefondo/soberbioBistroistro.jpg');
+  background-image: url('../images/imagenesdefondo/soberbioBistroistro.jpg');
   background-size: cover;
   background-position: center;
   position: relative;

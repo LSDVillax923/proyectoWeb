@@ -1,7 +1,7 @@
 /* --- LOGIN PAGE --- */
 .login-page {
   min-height: 100vh;
-  background-image: url('/images/imagenesdefondo/soberbioBistroistro.jpg');
+  background-image: url('../images/imagenesdefondo/soberbioBistroistro.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
