@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión - Soberbio</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+
 </head>
 <body class="login-page">
 <!-- ====== NAVBAR / ENCABEZADO ====== -->
 <nav class="navbar">
     <!-- Logo superior que lleva a la página de inicio -->
     <a href="inicio.html" id="logo-superior">
-        <img src="../public/images/logos/logoPrincipalMinimalista.png" height="120" alt="Logo SOBERBIO" />
-    </a> <link rel="stylesheet" href="../public/css/styles.css" />
+        <img src="/images/logos/logoPrincipalMinimalista.png" height="120" alt="Logo SOBERBIO" />
+    </a> 
     <!-- Acciones de navegación: botón reservar y hamburguesa -->
     <div class="nav-actions">
         <a href="reservar.html" class="btn-reservar-top">RESERVAR</a>
@@ -51,7 +53,7 @@
 <hr>
 <footer>
     <a href="inicio.html">
-        <img src="../public/images/logos/logoPrincipal.png" height="150" alt="Logo SOBERBIO" title="Inicio" />
+        <img src="/images/logos/logoPrincipal.png" height="150" alt="Logo SOBERBIO" title="Inicio" />
     </a>
 
     <ul>
@@ -65,11 +67,11 @@
     </ul>
 
     <div class="social">
-        <a href="https://www.instagram.com/soberbio.bistro/" target="_blank"><img src="../public/images/logos/instagram.png" height="40" alt="Instagram"></a>
-        <a href="https://wa.me/573155095645" target="_blank"><img src="../public/images/logos/whatsapp.png" height="40" alt="WhatsApp"></a>
-        <a href="https://www.facebook.com/soberbio.bistro" target="_blank"><img src="../public/images/logos/facebook.png" height="40" alt="Facebook"></a>
-        <a href="https://apps.apple.com/es/app/facetime/id1110145091" target="_blank"><img src="../public/images/logos/phone.png" height="40" alt="Teléfono"></a>
-        <a href="https://www.google.com/maps/place/SOBERBIO/" target="_blank"><img src="../public/images/logos/location.png" height="40" alt="Maps"></a>
+        <a href="https://www.instagram.com/soberbio.bistro/" target="_blank"><img src="/images/logos/instagram.png" height="40" alt="Instagram"></a>
+        <a href="https://wa.me/573155095645" target="_blank"><img src="/images/logos/whatsapp.png" height="40" alt="WhatsApp"></a>
+        <a href="https://www.facebook.com/soberbio.bistro" target="_blank"><img src="/images/logos/facebook.png" height="40" alt="Facebook"></a>
+        <a href="https://apps.apple.com/es/app/facetime/id1110145091" target="_blank"><img src="/images/logos/phone.png" height="40" alt="Teléfono"></a>
+        <a href="https://www.google.com/maps/place/SOBERBIO/" target="_blank"><img src="/images/logos/location.png" height="40" alt="Maps"></a>
     </div>
 </footer>
 
