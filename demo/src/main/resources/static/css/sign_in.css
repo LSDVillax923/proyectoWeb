@@ -51,3 +51,7 @@
 .signin-page hr {
   margin-top: 2rem;
 }
+.login-form a {
+    color: #fff;
+    font-weight: 700; /* o bold */
+}
