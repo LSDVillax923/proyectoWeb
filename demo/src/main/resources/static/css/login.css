@@ -1,20 +1,21 @@
 /* --- LOGIN PAGE --- */
 .login-page {
   min-height: 100vh;
-  background-image: url('../images/imagenesdefondo/soberbioBistroistro.jpg');
+  background-image: url('/images/imagenesdefondo/soberbioBistroistro.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 250px;
 }
 
 .login-form {
-  background: rgba(255, 255, 255, 0.9);
-  color: #111;
-  padding: 24px;
-  border-radius: 8px;
+  background: rgba(50, 50, 50, 0.7);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
   width: 90%;
   max-width: 400px;
 }
@@ -41,4 +42,12 @@
 .login-form .form-text {
   margin-top: 12px;
   text-align: center;
+}
+
+.login-page footer {
+  margin-top: auto;
+}
+
+.login-page hr {
+  margin-top: 2rem;
 }

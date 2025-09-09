@@ -6,15 +6,16 @@
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: 250px;
 }
 
 .signin-form {
-  background: rgba(255, 255, 255, 0.9);
-  color: #111;
-  padding: 24px;
-  border-radius: 8px;
+   background: rgba(50, 50, 50, 0.7);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
   width: 90%;
   max-width: 400px;
 }
@@ -41,4 +42,12 @@
 .signin-form .form-text {
   margin-top: 12px;
   text-align: center;
+}
+
+.signin-page footer {
+  margin-top: auto;
+}
+
+.signin-page hr {
+  margin-top: 2rem;
 }
