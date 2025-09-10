@@ -9,7 +9,7 @@ public class Comida {
     private Integer id;
     private String nombre;
     private String descripcion;
-    private Double precio;
+    private Integer precio;
     private String imagenUrl;
 }
 
