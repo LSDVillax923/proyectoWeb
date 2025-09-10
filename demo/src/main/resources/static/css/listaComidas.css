@@ -15,7 +15,14 @@ table {
     background-color: white;
     background-size: cover;
     background-position: center;
-    padding: 24px 0 140px;
+    background-repeat: no-repeat;
+    padding: 24px 0 40px;
+
+
+
+
+
+
 }
 
 .card {
