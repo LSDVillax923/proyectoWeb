@@ -17,8 +17,7 @@
     </div>
 
     <div class="right">
-      <a href="reservar.html"><button>Reservar</button></a>
-      <a href="menu.html"><button>Carrito</button></a>
+      
       <a href="https://www.instagram.com/soberbio.bistro/" target="_blank" title="Instagram">
         <img class="icon" src="/images/logos/instagramOscuro.svg" alt="Instagram">
       </a>
@@ -28,30 +27,40 @@
       <a href="https://www.facebook.com/soberbio.bistro" target="_blank" title="Facebook">
         <img class="icon" src="/images/logos/facebookOscuro.svg" alt="Facebook">
       </a>
+      <a href="reservar.html" id="login-button">
+        <button>Reservar</button>
+      </a>
+      <a href="menu.html" id="menu-button">
+        <button>Carrito</button>
+      </a>
     </div>
   </div>
 
   <!-- ====== CUERPO MENÚ ====== -->
   <div id="cuerpo-menu">
     <h1>Lista de Comidas</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="comida : ${comidas}">
-                <td><img th:src="@{${comida.imagenUrl}}" alt="Imagen de comida" /></td>
-                <td th:text="${comida.nombre}">Nombre</td>
-                <td th:text="${comida.descripcion}">Descripción</td>
-                <td th:text="${#numbers.formatInteger(comida.precio,3,'POINT')}">Precio</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card">
+      <table>
+          <thead>
+              <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Precio</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr th:each="comida : ${comidas}">
+                  <td><img th:src="@{${comida.imagenUrl}}" alt="Imagen de comida" /></td>
+                  <td th:text="${comida.nombre}">Nombre</td>
+                  <td th:text="${comida.descripcion}">Descripción</td>
+                  <td th:text="${#numbers.formatInteger(comida.precio,3,'POINT')}">Precio</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
   </div>
 
   <!-- ====== FOOTER ====== -->
