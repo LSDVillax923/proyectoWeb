@@ -15,6 +15,7 @@ public class ComidaController {
     @Autowired
     private ComidaService comidaService;
 
+    //http://localhost:8080/comida/lista
     @GetMapping("/lista")
     public String listaComidas(Model model) {
         model.addAttribute("comidas", comidaService.searchAll());
@@ -23,7 +24,7 @@ public class ComidaController {
 
     @GetMapping("/infoComida")
     public String infoComidaPage(Model model) {
-        Comida comida = new Comida(1, "Ejemplo", "Descripción de ejemplo", 9.99, "http://example.com/imagen.jpg");
+         Comida comida = comidaService.searchById(1);
         model.addAttribute("comida", comida);
         return "infoComida";
     }

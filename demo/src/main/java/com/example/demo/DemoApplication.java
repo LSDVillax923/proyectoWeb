@@ -20,9 +20,9 @@ public class DemoApplication {
 	}
 
 	@Bean
-	public Comida comida() {
-		return new Comida(1, "Ejemplo", "Descripción de ejemplo", 9.99, "http://example.com/imagen.jpg");
-	}
+        public Comida comida() {
+                return new Comida(1, "Ejemplo", "Descripción de ejemplo", 9.99, "/images/platos/hamburguesa.png");
+        }
 
 }
 

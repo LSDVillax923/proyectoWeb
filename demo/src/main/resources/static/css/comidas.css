@@ -2,12 +2,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
+    margin: 0 auto;
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
+    vertical-align: middle;
 }
 
 thead {
@@ -17,4 +19,6 @@ thead {
 img {
     max-width: 100px;
     height: auto;
-}
+ display: block;
+    margin: 0 auto;
+    }

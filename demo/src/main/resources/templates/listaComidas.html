@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <tr th:each="comida : ${comidas}">
-                <td><img th:src="${comida.imagenUrl}" alt="Imagen de comida" /></td>
+                <td><img th:src="@{${comida.imagenUrl}}" alt="Imagen de comida" /></td>
                 <td th:text="${comida.nombre}">Nombre</td>
                 <td th:text="${comida.descripcion}">Descripción</td>
                 <td th:text="${comida.precio}">Precio</td>
