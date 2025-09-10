@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Comidas</title>
+    <link rel="stylesheet" th:href="@{/css/general.css}" />
+    <link rel="stylesheet" th:href="@{/css/comidas.css}" />
+</head>
+<body>
+    <h1>Lista de Comidas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="comida : ${comidas}">
+                <td><img th:src="${comida.imagenUrl}" alt="Imagen de comida" /></td>
+                <td th:text="${comida.nombre}">Nombre</td>
+                <td th:text="${comida.descripcion}">Descripción</td>
+                <td th:text="${comida.precio}">Precio</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
