@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:object="${comida}". th:action="@{/comida/add}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input th:field="*{nombre}" type="text" id="nombre" placeholder="Nombre de la comida">
+
+        <label for="descripcion">Descripción:</label>
+        <input th:field="*{descripcion}" type="text" id="descripcion" placeholder="Descripción de la comida">
+
+        <label for="precio">Precio:</label>
+        <input th:field="*{precio}" type="number" id="precio" placeholder="Precio de la comida">
+
+        <label for="imagenUrl">URL de la imagen:</label>
+        <input th:field="*{imagenUrl}" type="text" id="imagenUrl" placeholder="URL de la imagen">
+
+        <button type="submit">Crear Comida</button>
+
+    </form>
+    
+</body>
+</html>

@@ -47,6 +47,16 @@ public class ComidaController {
         comidaService.deleteById(id);
         return "redirect:/comida/lista";
     }
-    
+
+
+    @GetMapping("/add")
+    public String mostrarFormularioCrear(Model model) {
+
+        Comida nuevaComida = new Comida(null, "", "", 0, "");
+
+        model.addAttribute("comida", nuevaComida);
+
+        return "crearComida";
+    }
 
 }
