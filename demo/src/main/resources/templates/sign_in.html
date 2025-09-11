@@ -16,11 +16,11 @@
           <img src="/images/logos/logoPrincipalMinimalista.png" height="120" alt="Logo SOBERBIO" />
       </a>
 
-      <!-- Acciones de navegación: botón reservar y hamburguesa -->
+      <!-- Acciones de navegación:y hamburguesa -->
       <div class="nav-actions">
-          <a href="reservar.html" class="btn-reservar-top">RESERVAR</a>
+          <a th:href="@{/login}" class="btn-reservar-top">Iniciar Sesión</a>
 
-          <!-- Botón hamburguesa para abrir/cerrar el menú en móviles -->
+  
           <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
               <span></span>
               <span></span>
@@ -50,7 +50,7 @@
          <input type="password" id="password" name="password" required>
 
          <button type="submit">Registrarse</button>
-          <p class="form-text">¿Ya tienes una cuenta? <a href="login.html">Ingresa</a></p>
+          <p class="form-text">¿Ya tienes una cuenta? <a th:href="@{/login}">Ingresa</a></p>
      </form>
   </div>
 

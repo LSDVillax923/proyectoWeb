@@ -53,5 +53,10 @@
 }
 .login-form a {
     color: #fff;
-    font-weight: 700; /* o bold */
+    font-weight: 700; 
+}
+
+.form-text a {
+    color: #fff;
+    font-weight: 700;
 }

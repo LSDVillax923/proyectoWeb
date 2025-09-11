@@ -16,10 +16,10 @@
     <a th:href="@{/inicio}" id="logo-superior">
         <img src="/images/logos/logoPrincipalMinimalista.png" height="120" alt="Logo SOBERBIO" />
     </a> 
-    <!-- Acciones de navegación: botón reservar y hamburguesa -->
+    <!-- Acciones de navegación hamburguesa -->
     <div class="nav-actions">
-        <a th:href="@{/reservar}" class="btn-reservar-top">RESERVAR</a>
-        <!-- Botón hamburguesa para abrir/cerrar el menú en móviles -->
+        <a th:href="@{/menu}" class="btn-reservar-top">Menu</a>
+
         <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
             <span></span>
             <span></span>
@@ -32,8 +32,8 @@
     <ul>
         <li><a th:href="@{/inicio}">Inicio</a></li>
         <li><a th:href="@{/login}">Nosotros</a></li>
-        <li><a th:href="@{/menu}">Nosotros</a></li>
-        <li><a th:href="@{/reservar}">Reservar</a></li>
+        <li><a th:href="@{/menu}">Menu</a></li>
+        <li><a th:href="@{/sign_in}">Registrarse</a></li>
     </ul>
 </div>
 
@@ -47,7 +47,7 @@
 
         <button type="submit">Iniciar sesión</button>
 
-         <p>¿No tienes una cuenta? <a href="sign_in.html">Regístrate</a></p>
+         <p>¿No tienes una cuenta? <a th:href="@{/sign_in}">Regístrate</a></p>
     </form>
 </div>
 

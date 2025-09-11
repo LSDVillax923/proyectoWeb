@@ -30,13 +30,6 @@ model.addAttribute("comidas", comidaService.searchAll());
 return "menu";
 }
 
-
-@GetMapping("/reservar")
-public String reservarPage() {
-return "reservar";
-}
-
-
 @GetMapping("/sign_in")
 
 public String signInPage() {
