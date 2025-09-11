@@ -30,21 +30,21 @@ public class ComidaController {
     }
 
      @GetMapping("/info/{id}")
-    public String infoComida(@PathVariable Integer id, Model model) {
+    public String infoComida(@PathVariable Long id, Model model) {
         Comida comida = comidaService.searchById(id);
         model.addAttribute("comida", comida);
         return "infoComida";
     }
 
     @GetMapping(params = "id")
-    public String infoComida2(@RequestParam Integer id, Model model) {
+    public String infoComida2(@RequestParam Long id, Model model) {
         Comida comida = comidaService.searchById(id);
         model.addAttribute("comida", comida);
         return "infoComida";
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteComida(@PathVariable Integer id) {
+    public String deleteComida(@PathVariable Long id) {
         comidaService.deleteById(id);
         return "redirect:/comida/lista";
     }
@@ -68,7 +68,7 @@ public class ComidaController {
 
 
     @GetMapping("/update/{id}")
-    public String getMethodName(@PathVariable("id") Integer id, Model model) {
+    public String getMethodName(@PathVariable("id") Long id, Model model) {
 
         Comida comidaExistente = comidaService.searchById(id);
 
