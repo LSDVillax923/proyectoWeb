@@ -49,3 +49,13 @@ table img {
     height: auto;
     margin: 0 auto;
     }
+
+    .eliminar-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.agregar-link {
+    color: #fff;
+    font-weight: bold;
+}

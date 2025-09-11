@@ -46,11 +46,16 @@
                   <td th:text="${comida.descripcion}">Descripción</td>
                   <td th:text="${#numbers.formatInteger(comida.precio,3,'POINT')}">Precio</td>
                   <td>
-                      <a href="@{/comida/delete/{id}(id=${comida.id})}">Eliminar</a>
+                      <a th:href="@{/comida/delete/{id}(id=${comida.id})}" class="eliminar-link">Eliminar</a>
                   </td>
               </tr>
           </tbody>
       </table>
+      <a
+      type="button"
+      th:href="@{/comida/add}"
+      >Agregar Comida
+      </a>
     </div>
   </div>
 
