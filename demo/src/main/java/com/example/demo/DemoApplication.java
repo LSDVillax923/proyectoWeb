@@ -17,10 +17,4 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-
-	@Bean
-        public Comida comida() {
-                return new Comida(1, "Ejemplo", "Descripción de ejemplo", 20000, "/images/platos/hamburguesa.png");
-        }
-
 }
