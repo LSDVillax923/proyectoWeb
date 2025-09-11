@@ -35,4 +35,11 @@ return "menu";
 public String signInPage() {
 return "sign_in";
 }
+
+@GetMapping("/admin/login")
+public String adminLoginPage(){
+    return "admin";
 }
+}
+
+
