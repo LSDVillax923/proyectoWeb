@@ -13,7 +13,7 @@
   <!-- ====== TOOLBAR ====== -->
   <div id="toolbar">
     <div class="left">
-      <a href="../html/inicio.html" id="logo-superior">
+      <a th:href="@{/inicio}" id="logo-superior">
         <img id="toolbar-logo" src="/images/logos/logoPrincipalOscuro.png"  alt="Soberbio">
       </a>
 
@@ -29,10 +29,10 @@
       <a href="https://www.facebook.com/soberbio.bistro" target="_blank" title="Facebook">
         <img class="icon" src="/images/logos/facebookOscuro.svg" alt="Facebook">
       </a>
-      <a href="../html/login.html" id="login-button">
+      <a th:href="@{/login}" id="login-button">
         <button>Iniciar Sesión</button>
       </a>
-      <a href="../html/menu.html" id="menu-button">
+      <a th:href="@{/menu}" id="menu-button">
         <button>Ver Menu</button>
       </a>
     </div>
@@ -98,7 +98,7 @@
   <!-- ====== FOOTER ====== -->
   <hr>
   <footer>
-    <a href="inicio.html">
+    <a th:href="@{/inicio}">
       <img src="/images/logos/logoPrincipal.png" height="150" alt="Logo SOBERBIO" title="Inicio" />
     </a>
 
@@ -109,7 +109,7 @@
       <li><a href="#awards">Awards</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#prensa">Prensa</a></li>
-      <li><a href="gallery.html">Galería</a></li>
+      <li><a th:href="@{/gallery}">Galería</a></li>
     </ul>
 
     <div class="social">

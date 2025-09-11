@@ -13,12 +13,12 @@
 <!-- ====== NAVBAR / ENCABEZADO ====== -->
 <nav class="navbar">
     <!-- Logo superior que lleva a la página de inicio -->
-    <a href="inicio.html" id="logo-superior">
+    <a th:href="@{/inicio}" id="logo-superior">
         <img src="/images/logos/logoPrincipalMinimalista.png" height="120" alt="Logo SOBERBIO" />
     </a> 
     <!-- Acciones de navegación: botón reservar y hamburguesa -->
     <div class="nav-actions">
-        <a href="reservar.html" class="btn-reservar-top">RESERVAR</a>
+        <a th:href="@{/reservar}" class="btn-reservar-top">RESERVAR</a>
         <!-- Botón hamburguesa para abrir/cerrar el menú en móviles -->
         <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
             <span></span>
@@ -30,10 +30,10 @@
 
 <div id="menu-overlay" class="menu-overlay">
     <ul>
-        <li><a href="inicio.html">Inicio</a></li>
-        <li><a href="login.html">Nosotros</a></li>
-        <li><a href="menu.html">Nosotros</a></li>
-        <li><a href="reservar.html">Reservar</a></li>
+        <li><a th:href="@{/inicio}">Inicio</a></li>
+        <li><a th:href="@{/login}">Nosotros</a></li>
+        <li><a th:href="@{/menu}">Nosotros</a></li>
+        <li><a th:href="@{/reservar}">Reservar</a></li>
     </ul>
 </div>
 
