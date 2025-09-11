@@ -12,7 +12,7 @@
   <!-- ====== NAVBAR / ENCABEZADO ====== -->
   <nav class="navbar">
       <!-- Logo superior que lleva a la página de inicio -->
-      <a href="inicio.html" id="logo-superior">
+      <a th:href="@{/inicio}" id="logo-superior">
           <img src="/images/logos/logoPrincipalMinimalista.png" height="120" alt="Logo SOBERBIO" />
       </a>
 
@@ -31,10 +31,10 @@
 
   <div id="menu-overlay" class="menu-overlay">
     <ul>
-      <li><a href="inicio.html">Inicio</a></li>
-      <li><a href="login.html">Nosotros</a></li>
-      <li><a href="menu.html">Nosotros</a></li>
-      <li><a href="reservar.html">Reservar</a></li>
+      <li><a th:href="@{/inicio}">Inicio</a></li>
+      <li><a th:href="@{/login}">Nosotros</a></li>
+      <li><a th:href="@{/menu}">Nosotros</a></li>
+      <li><a th:href="@{/reservar}">Reservar</a></li>
     </ul>
   </div>
 
@@ -68,7 +68,7 @@
       <li><a href="#awards">Awards</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#prensa">Prensa</a></li>
-      <li><a href="gallery.html">Galería</a></li>
+      <li><a th:href="@{/gallery}">Galería</a></li>
     </ul>
 
     <div class="social">

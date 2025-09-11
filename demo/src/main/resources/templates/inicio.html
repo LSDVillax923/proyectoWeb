@@ -22,7 +22,7 @@
     
         </a>
 
-        <!-- Acciones de navegación: botón reservar y hamburguesa -->
+        
         <div class="nav-actions">
             <a th:href="@{/reservar}" class="btn-reservar-top">RESERVAR</a>
 
@@ -38,11 +38,11 @@
 
     <div id="menu-overlay" class="menu-overlay">
         <ul>
-            <li><a href="inicio.html">Inicio</a></li>
-            <li><a href="login.html">Nosotros</a></li>
-            <li><a href="menu.html">Nosotros</a></li>
-            <li><a href="reservar.html">Reservar</a></li>
-             <li><a th:href="@{/comida/lista}">Comidas</a></li>
+            <li><a th:href="@{/inicio}">Inicio</a></li>
+            <li><a th:href="@{/nosotros}">Nosotros</a></li>
+            <li><a th:href="@{/menu}">Menú</a></li>
+            <li><a th:href="@{/reservar}">Reservar</a></li>
+            <li><a th:href="@{/comida/lista}">Comidas</a></li>
 
         </ul>
     </div>
@@ -89,7 +89,7 @@
                     <li>Menú degustación</li>
                     <li>Opciones vegetarianas</li>
                 </ul>
-               <a href="menu.html"><button>MENU</button></a>
+               <a th:href="@{/menu}"><button>MENU</button></a>
             </div>
 
             <!-- Imagen de comedor -->
@@ -122,7 +122,7 @@
                     trasciende lo convencional.</p>
 
                 <!-- Botón que navega a la página de reservas -->
-                <button onclick="location.href='reservar.html'">RESERVAR</button>
+                <button onclick="location.href='@{/reservar}'">RESERVAR</button>
             </div>
 
             <!-- Imagen del chef -->
@@ -172,7 +172,7 @@
                             lista.</p>
                     </li>
                 </ul>
-                <a href="reservar.html"><button>RESERVAR</button></a>
+                <a th:href="@{/reservar}"><button>RESERVAR</button></a>
             </div>
 
             <!-- Imagen de premiación -->
@@ -227,7 +227,7 @@
     <hr>
     <footer>
         <!-- Logo del footer que devuelve a inicio -->
-        <a href="inicio.html">
+        <a th:href="@{/inicio}">
             <img src="/images/logos/logoPrincipal.png" height="150" alt="Logo SOBERBIO" title="Inicio" />
         </a>
 
