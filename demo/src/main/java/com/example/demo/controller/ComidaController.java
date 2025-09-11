@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @Controller
 @RequestMapping("/comida")
@@ -22,9 +24,9 @@ public class ComidaController {
         return "listaComidas";
     }
 
-    @GetMapping("/infoComida")
-    public String infoComidaPage(Model model) {
-         Comida comida = comidaService.searchById(1);
+     @GetMapping("/info/{id}")
+    public String infoComida(@PathVariable Integer id, Model model) {
+        Comida comida = comidaService.searchById(id);
         model.addAttribute("comida", comida);
         return "infoComida";
     }
