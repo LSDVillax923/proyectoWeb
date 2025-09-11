@@ -38,10 +38,17 @@ public class ComidaRepository {
     }
 
     public void save(Comida comida) {
-        int lastId = comidas.isEmpty() ? 0 : comidas.keySet().stream().max(Integer::compareTo).get();
+
+        if (comida.getId() == null) {
+           
+            int lastId = comidas.isEmpty() ? 0 : comidas.keySet().stream().max(Integer::compareTo).get();
         comida.setId(lastId + 1);
         comidas.put(comida.getId(), comida);
 
+        }else{
+            comidas.put(comida.getId(), comida);
+        }
+        
     }
 
     public void deleteById(Integer id) {

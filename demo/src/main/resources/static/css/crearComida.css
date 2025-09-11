@@ -1,0 +1,53 @@
+/* --- CREAR COMIDA PAGE --- */
+.crearComida-page {
+  min-height: 100vh;
+  background-image: url('/images/imagenesdefondo/soberbioBistroistro.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 250px;
+}
+
+.crearComida-form {
+  background: rgba(50, 50, 50, 0.7);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.crearComida-form label {
+  display: block;
+  margin-top: 12px;
+}
+
+.crearComida-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.crearComida-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 16px;
+}
+
+.crearComida-page footer {
+  margin-top: auto;
+}
+
+.crearComida-page hr {
+  margin-top: 2rem;
+}
+
+.crearComida-form a {
+  color: #fff;
+  font-weight: 700;
+}

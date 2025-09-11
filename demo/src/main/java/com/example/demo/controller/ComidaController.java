@@ -67,4 +67,14 @@ public class ComidaController {
     }
 
 
+    @GetMapping("/update/{id}")
+    public String getMethodName(@PathVariable("id") Integer id, Model model) {
+
+        Comida comidaExistente = comidaService.searchById(id);
+
+        model.addAttribute("comida", comidaExistente);
+
+        return "crearComida";
+    }
+
 }
