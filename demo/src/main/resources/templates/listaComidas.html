@@ -36,6 +36,7 @@
                   <th>Nombre</th>
                   <th>Descripción</th>
                   <th>Precio</th>
+                  <th>Acciones</th>
               </tr>
           </thead>
           <tbody>
@@ -44,6 +45,9 @@
                   <td th:text="${comida.nombre}">Nombre</td>
                   <td th:text="${comida.descripcion}">Descripción</td>
                   <td th:text="${#numbers.formatInteger(comida.precio,3,'POINT')}">Precio</td>
+                  <td>
+                      <a href="@{/comida/delete/{id}(id=${comida.id})}">Eliminar</a>
+                  </td>
               </tr>
           </tbody>
       </table>

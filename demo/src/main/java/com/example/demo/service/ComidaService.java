@@ -9,5 +9,9 @@ public interface ComidaService {
     public Comida searchById(Integer id);
 
     public Collection<Comida> searchAll();
+
+    public void save(Comida comida);
+
+    public void deleteById(Integer id);
     
 }

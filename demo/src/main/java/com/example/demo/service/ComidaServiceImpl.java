@@ -26,4 +26,14 @@ public class ComidaServiceImpl implements ComidaService {
         return comidaRepository.findAll();
     }
 
+    @Override
+    public void save(Comida comida) {
+        comidaRepository.save(comida);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        comidaRepository.deleteById(id);
+    }
+
 }

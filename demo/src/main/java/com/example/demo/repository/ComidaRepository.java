@@ -36,4 +36,15 @@ public class ComidaRepository {
     public Collection<Comida> findAll() {
         return comidas.values();
     }
+
+    public void save(Comida comida) {
+        int lastId = comidas.isEmpty() ? 0 : comidas.keySet().stream().max(Integer::compareTo).get();
+        comida.setId(lastId + 1);
+        comidas.put(comida.getId(), comida);
+
+    }
+
+    public void deleteById(Integer id) {
+        comidas.remove(id);
+    }
 }

@@ -2,11 +2,15 @@ package com.example.demo.controller;
 
 import com.example.demo.entities.Comida;
 import com.example.demo.service.ComidaService;
+
+import java.security.Provider.Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
@@ -30,5 +34,19 @@ public class ComidaController {
         model.addAttribute("comida", comida);
         return "infoComida";
     }
+
+    @GetMapping(params = "id")
+    public String infoComida2(@RequestParam Integer id, Model model) {
+        Comida comida = comidaService.searchById(id);
+        model.addAttribute("comida", comida);
+        return "infoComida";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteComida(@PathVariable Integer id) {
+        comidaService.deleteById(id);
+        return "redirect:/comida/lista";
+    }
+    
 
 }
