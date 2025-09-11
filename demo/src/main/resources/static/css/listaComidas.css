@@ -55,11 +55,15 @@ table img {
     justify-content: center;
     margin-top: 1rem;
 }
-
+  .actualizar-link,
     .eliminar-link {
-    color: #fff;
-    font-weight: bold;
-}
+     text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .actualizar-link:hover { color: #00a000; } 
+    .eliminar-link:hover { color: #ff0000; }
 
 .agregar-link {
     text-decoration: none;
