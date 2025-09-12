@@ -2,10 +2,15 @@ package com.example.demo.entities;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 
@@ -20,6 +25,15 @@ public class Pedido {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
+    @ManyToMany
+    @JoinTable(
+        name = "pedido_comida", 
+        joinColumns = @JoinColumn(name = "pedido_id"), 
+        inverseJoinColumns = @JoinColumn(name = "comida_id") 
+    )
+    private List<Comida> comidas = new ArrayList<>();
+
 
     public Pedido() {
     }
@@ -57,5 +71,15 @@ public class Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    public List<Comida> getComidas() {
+        return comidas;
+    }
+
+    public void setComidas(List<Comida> comidas) {
+        this.comidas = comidas;
+    }
+
+    
 
 }
