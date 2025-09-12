@@ -5,7 +5,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
 
+import com.example.demo.repository.ClienteRepository;
 import com.example.demo.repository.ComidaRepository;
+import com.example.demo.repository.PedidoRepository;
 
 import jakarta.transaction.Transactional;
 
@@ -15,6 +17,12 @@ public class DatabaseInit implements ApplicationRunner {
 
         @Autowired
         ComidaRepository comidaRepository;
+
+        @Autowired
+        PedidoRepository pedidoRepository;
+
+        @Autowired
+        ClienteRepository clienteRepository;
 
         @Override
         public void run(ApplicationArguments args) throws Exception {
@@ -239,6 +247,31 @@ public class DatabaseInit implements ApplicationRunner {
                                 "Té Helado",
                                 "Té negro frío con limón y hielo.",
                                 9000, "/images/platos/te.jpeg"));
+
+
+                pedidoRepository.save(new Pedido("Preparandose"));
+                pedidoRepository.save(new Pedido("Despachado"));
+                pedidoRepository.save(new Pedido("Entregado"));
+                pedidoRepository.save(new Pedido("Cancelado"));
+                pedidoRepository.save(new Pedido("Preparandose"));
+                pedidoRepository.save(new Pedido("Despachado"));
+                pedidoRepository.save(new Pedido("Entregado"));
+                pedidoRepository.save(new Pedido("Cancelado"));
+                pedidoRepository.save(new Pedido("Preparandose"));
+                pedidoRepository.save(new Pedido("Preparandose"));
+                pedidoRepository.save(new Pedido("Despachado"));
+                pedidoRepository.save(new Pedido("Entregado"));
+                pedidoRepository.save(new Pedido("Cancelado"));
+                pedidoRepository.save(new Pedido("Despachado"));
+                pedidoRepository.save(new Pedido("Entregado"));
+                pedidoRepository.save(new Pedido("Cancelado"));
+
+
+                clienteRepository.save(new Cliente("Diego Andres", "Villabon Correa", "diego.villabon@gmail.com", "1234", "3101234567", "Calle 123 #45-67"));
+                clienteRepository.save(new Cliente("Maria Gomez", "Martinez", "maria.gomez@gmail.com", "5678", "3107654321", "Calle 234 #56-78"));
+                clienteRepository.save(new Cliente("Carlos Sanchez", "Hernandez", "carlos.sanchez@gmail.com", "9101", "3109876543", "Calle 345 #67-89"));
+                clienteRepository.save(new Cliente("Laura Torres", "Ramirez", "laura.torres@gmail.com", "1121", "3101234567", "Calle 456 #78-90"));
+                clienteRepository.save(new Cliente("Luis Rodriguez", "Diaz", "luis.rodriguez@gmail.com", "3141", "3107654321", "Calle 567 #89-01"));
 
         }
 

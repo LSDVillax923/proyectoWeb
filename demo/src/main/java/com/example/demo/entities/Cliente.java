@@ -3,12 +3,12 @@ package com.example.demo.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToOne;
+
 
 
 
 @Entity
-@Table(name = "Tabla_clientes")
 public class Cliente {
     @Id
     @GeneratedValue
@@ -19,6 +19,9 @@ public class Cliente {
     private String contrasena;
     private String telefono;
     private String direccion;
+
+    @OneToOne
+    private Pedido pedido;
 
 
 
@@ -119,5 +122,19 @@ public class Cliente {
         this.direccion = direccion;
     }
 
+
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
+    }
+
+
+    
 }
 

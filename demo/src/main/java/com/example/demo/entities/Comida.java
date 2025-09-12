@@ -1,12 +1,15 @@
 package com.example.demo.entities;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.ManyToMany;
+
 
 
 @Entity
-@Table(name = "Tabla_comidas")
 public class Comida {
     @Id
     @GeneratedValue
@@ -15,6 +18,14 @@ public class Comida {
     private String descripcion;
     private Integer precio;
     private String imagenUrl;
+
+
+    @ManyToMany
+    private List<Pedido> pedidos = new ArrayList<>();
+
+    
+
+
 
     public Comida() {
     }
@@ -72,6 +83,13 @@ public class Comida {
 
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 }
 
