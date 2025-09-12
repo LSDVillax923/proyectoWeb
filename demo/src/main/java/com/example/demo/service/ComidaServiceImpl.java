@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,11 @@ public class ComidaServiceImpl implements ComidaService {
     @Override
     public void deleteById(Long id) {
         comidaRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Comida> searchAllById(List<Long> ids) {
+        return comidaRepository.findAllById(ids);
     }
 
 }

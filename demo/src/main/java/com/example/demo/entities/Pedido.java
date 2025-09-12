@@ -5,6 +5,7 @@ package com.example.demo.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,6 +13,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 
 @Entity
@@ -26,14 +28,8 @@ public class Pedido {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @ManyToMany
-    @JoinTable(
-        name = "pedido_comida", 
-        joinColumns = @JoinColumn(name = "pedido_id"), 
-        inverseJoinColumns = @JoinColumn(name = "comida_id") 
-    )
-    private List<Comida> comidas = new ArrayList<>();
-
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
+    private List<DetallePedido> detalles = new ArrayList<>();
 
     public Pedido() {
     }
@@ -72,14 +68,11 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public List<Comida> getComidas() {
-        return comidas;
+    public List<DetallePedido> getDetalles() {
+        return detalles;
     }
 
-    public void setComidas(List<Comida> comidas) {
-        this.comidas = comidas;
+    public void setDetalles(List<DetallePedido> detalles) {
+        this.detalles = detalles;
     }
-
-    
-
 }
