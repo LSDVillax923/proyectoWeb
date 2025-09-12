@@ -6,7 +6,30 @@
 </head>
 <body>
     <h1>Información del Pedido</h1>
-    <p>ID: <span th:text="${pedido.id}">1</span></p>
-    <p>Estado: <span th:text="${pedido.estado}">estado</span></p>
+
+    <p><strong>ID:</strong> <span th:text="${pedido.id}">1</span></p>
+    <p><strong>Estado:</strong> <span th:text="${pedido.estado}">estado</span></p>
+
+    <h2>Cliente</h2>
+    <p>
+        <strong>Nombre:</strong> <span th:text="${pedido.cliente.nombre}">Nombre</span> <br>
+        <strong>Apellido:</strong> <span th:text="${pedido.cliente.apellido}">Apellido</span> <br>
+        <strong>Email:</strong> <span th:text="${pedido.cliente.correo}">email</span> <br>
+        <strong>Teléfono:</strong> <span th:text="${pedido.cliente.telefono}">teléfono</span> <br>
+        <strong>Dirección:</strong> <span th:text="${pedido.cliente.direccion}">dirección</span>
+    </p>
+
+    <h2>Comidas del Pedido</h2>
+    <ul>
+        <li th:each="detalle : ${pedido.detalles}">
+            <span th:text="${detalle.comida.nombre}">Nombre Comida</span>
+            <span th:text="'(' + ${detalle.cantidad} + ')'"> (Cantidad)</span>
+            <span> - </span>
+            <span th:text="${detalle.comida.precio}">Precio</span> COP
+        </li>
+    </ul>
+
+    <br>
+    <a th:href="@{/pedido/lista}">Volver a la lista</a>
 </body>
 </html>

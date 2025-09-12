@@ -6,11 +6,67 @@
 </head>
 <body>
     <h1>Crear/Editar Pedido</h1>
-    <form th:object="${pedido}" th:action="@{/pedido/add}" method="post">
-        <input type="hidden" th:field="*{id}" />
+    <form id="pedidoForm" th:object="${pedidoForm}" th:action="@{/pedido/add}" method="post">
+        <input type="hidden" th:field="*{pedido.id}" />
+
         <label for="estado">Estado:</label>
-        <input id="estado" type="text" th:field="*{estado}" />
-        <button type="submit">Guardar</button>
+        <input id="estado" type="text" th:field="*{pedido.estado}" />
+        <br><br>
+
+        <label for="cliente">Cliente:</label>
+        <select id="cliente" th:field="*{cliente}">
+            <option th:each="cliente : ${clientes}" 
+                    th:value="${cliente.id}" 
+                    th:text="${cliente.nombre + ' ' + cliente.apellido}">
+            </option>
+        </select>
+        <br><br>
+
+        <h3>Menú de Comidas:</h3>
+        <div th:each="comida, stat : ${comidas}" class="item-comida">
+            <input 
+                type="checkbox" 
+                th:id="'comida-' + ${comida.id}" 
+                th:name="*{pedidoItems[__${stat.index}__].comidaId}"
+                th:value="${comida.id}"
+                class="comida-checkbox"
+            />
+            <label th:for="'comida-' + ${comida.id}" th:text="${comida.nombre + ' - $' + comida.precio}"></label>
+
+            <input 
+                type="number" 
+                th:id="'cantidad-' + ${comida.id}" 
+                class="cantidad-input" 
+                value="1" 
+                min="1" 
+                style="width: 50px;" 
+                th:name="*{pedidoItems[__${stat.index}__].cantidad}" 
+                disabled 
+            />
+        </div>
+        <br>
+        
+        <button type="submit">Guardar Pedido</button>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const checkboxes = document.querySelectorAll('.comida-checkbox');
+
+            checkboxes.forEach(checkbox => {
+                const quantityInput = checkbox.nextElementSibling.nextElementSibling;
+                
+                checkbox.addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        quantityInput.disabled = false;
+                        quantityInput.value = 1; 
+                    } else {
+                        quantityInput.disabled = true;
+                        quantityInput.value = 0; // Set to 0 to ensure it doesn't get persisted if unselected
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
