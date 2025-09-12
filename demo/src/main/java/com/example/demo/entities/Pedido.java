@@ -1,11 +1,11 @@
 package com.example.demo.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 
 
@@ -18,7 +18,8 @@ public class Pedido {
     private String estado;
 
     @ManyToMany
-    private List<Comida> comidas = new ArrayList<>();
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
     public Pedido() {
     }
@@ -50,12 +51,11 @@ public class Pedido {
     }
 
 
-    public List<Comida> getComidas() {
-        return comidas;
+    public Cliente getCliente() {
+        return cliente;
     }
-
-    public void setComidas(List<Comida> comidas) {
-        this.comidas = comidas;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
 }
