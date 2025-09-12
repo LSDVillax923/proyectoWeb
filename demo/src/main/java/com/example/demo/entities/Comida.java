@@ -1,7 +1,6 @@
 package com.example.demo.entities;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,8 +19,8 @@ public class Comida {
     private String imagenUrl;
 
 
-    @ManyToMany
-    private List<Pedido> pedidos = new ArrayList<>();
+    @ManyToMany(mappedBy = "comidas")
+    private List<Pedido> pedidos ;
 
     
 

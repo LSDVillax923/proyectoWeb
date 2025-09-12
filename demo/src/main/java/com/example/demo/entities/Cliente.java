@@ -1,9 +1,11 @@
 package com.example.demo.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 
 
 
@@ -20,8 +22,8 @@ public class Cliente {
     private String telefono;
     private String direccion;
 
-    @OneToOne
-    private Pedido pedido;
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos;
 
 
 
@@ -124,17 +126,12 @@ public class Cliente {
 
 
 
-    public Pedido getPedido() {
-        return pedido;
+    public List<Pedido> getPedidos() {
+        return pedidos;
     }
 
-
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
-
-
-    
 }
 
