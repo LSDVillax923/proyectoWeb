@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Pedido</title>
+</head>
+<body>
+    <h1>Crear/Editar Pedido</h1>
+    <form th:object="${pedido}" th:action="@{/pedido/add}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <label for="estado">Estado:</label>
+        <input id="estado" type="text" th:field="*{estado}" />
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

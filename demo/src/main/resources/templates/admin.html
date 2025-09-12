@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login - Soberbio</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" th:href="@{/css/general.css}" />
+
+</head>
+<body class="login-page">
+
+
+<div class="login-form">
+    <form th:action="@{/admin/login}" method="post">
+      <label for="username">Usuario</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+</body>
+</html>

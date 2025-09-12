@@ -6,12 +6,12 @@ import com.example.demo.entities.Comida;
 
 public interface ComidaService {
 
-    public Comida searchById(Integer id);
+    public Comida searchById(Long id);
 
     public Collection<Comida> searchAll();
 
     public void save(Comida comida);
 
-    public void deleteById(Integer id);
+    public void deleteById(Long id);
     
 }

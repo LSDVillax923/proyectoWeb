@@ -17,8 +17,8 @@ public class ComidaServiceImpl implements ComidaService {
     ComidaRepository comidaRepository;
 
     @Override
-    public Comida searchById(Integer id) {
-        return comidaRepository.findById(id);
+    public Comida searchById(Long id) {
+        return comidaRepository.findById(id).get();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ComidaServiceImpl implements ComidaService {
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         comidaRepository.deleteById(id);
     }
 

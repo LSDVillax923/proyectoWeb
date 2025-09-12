@@ -10,17 +10,14 @@
   <!-- ====== TOOLBAR ====== -->
   <div id="toolbar">
     <div class="left">
-      <a href="inicio.html" id="logo-superior">
+      <a th:href="@{/inicio}" id="logo-superior">
         <img id="toolbar-logo" src="/images/logos/logoPrincipalOscuro.png" alt="Soberbio">
       </a>
     </div>
 
     <div class="right">
-      <a href="reservar.html" id="login-button">
-        <button>Reservar</button>
-      </a>
-      <a href="menu.html" id="menu-button">
-        <button>Carrito</button>
+      <a th:href="@{/admin}" id="menu-button">
+        <button>Cuenta</button>
       </a>
     </div>
   </div>
@@ -64,7 +61,7 @@
   <!-- ====== FOOTER ====== -->
   <hr>
   <footer>
-    <a href="inicio.html">
+    <a th:href="@{/inicio}">
       <img src="/images/logos/logoPrincipal.png" height="150" alt="Logo SOBERBIO" title="Inicio" />
     </a>
 
@@ -75,7 +72,7 @@
       <li><a href="#awards">Awards</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#prensa">Prensa</a></li>
-      <li><a href="gallery.html">Galería</a></li>
+      <li><a th:href="@{/gallery}">Galería</a></li>
     </ul>
 
     <div class="social">
