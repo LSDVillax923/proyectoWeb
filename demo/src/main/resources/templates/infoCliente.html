@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Información del Cliente</title>
+    <link rel="stylesheet" th:href="@{/css/crearComida.css}" />
+    <link rel="stylesheet" th:href="@{/css/general.css}" />
+</head>
+<body>
+    <h1>Información del Cliente</h1>
+    <div>
+        <p><strong>Nombre:</strong> <span th:text="${cliente.nombre}"></span></p>
+        <p><strong>Apellido:</strong> <span th:text="${cliente.apellido}"></span></p>
+        <p><strong>Correo:</strong> <span th:text="${cliente.correo}"></span></p>
+        <p><strong>Teléfono:</strong> <span th:text="${cliente.telefono}"></span></p>
+        <p><strong>Dirección:</strong> <span th:text="${cliente.direccion}"></span></p>
+    </div>
+    <a th:href="@{/cliente/lista}">Volver a la lista</a>
+</body>
+</html>
