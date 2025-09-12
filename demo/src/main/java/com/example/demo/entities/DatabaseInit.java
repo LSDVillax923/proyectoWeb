@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 
 import com.example.demo.repository.ClienteRepository;
 import com.example.demo.repository.ComidaRepository;
+import com.example.demo.repository.DetallePedidoRepository;
 import com.example.demo.repository.PedidoRepository;
 
 import jakarta.transaction.Transactional;
@@ -23,6 +24,9 @@ public class DatabaseInit implements ApplicationRunner {
 
         @Autowired
         ClienteRepository clienteRepository;
+
+        @Autowired
+        DetallePedidoRepository detallePedidoRepository;
 
         @Override
         public void run(ApplicationArguments args) throws Exception {
@@ -249,29 +253,96 @@ public class DatabaseInit implements ApplicationRunner {
                                 9000, "/images/platos/te.jpeg"));
 
 
-                pedidoRepository.save(new Pedido("Preparandose"));
-                pedidoRepository.save(new Pedido("Despachado"));
-                pedidoRepository.save(new Pedido("Entregado"));
-                pedidoRepository.save(new Pedido("Cancelado"));
-                pedidoRepository.save(new Pedido("Preparandose"));
-                pedidoRepository.save(new Pedido("Despachado"));
-                pedidoRepository.save(new Pedido("Entregado"));
-                pedidoRepository.save(new Pedido("Cancelado"));
-                pedidoRepository.save(new Pedido("Preparandose"));
-                pedidoRepository.save(new Pedido("Preparandose"));
-                pedidoRepository.save(new Pedido("Despachado"));
-                pedidoRepository.save(new Pedido("Entregado"));
-                pedidoRepository.save(new Pedido("Cancelado"));
-                pedidoRepository.save(new Pedido("Despachado"));
-                pedidoRepository.save(new Pedido("Entregado"));
-                pedidoRepository.save(new Pedido("Cancelado"));
+                // --- Crear clientes ---
+                Cliente cliente1 = clienteRepository.save(new Cliente("Diego Andres", "Villabon Correa", "diego.villabon@gmail.com", "1234", "3101234567", "Calle 123 #45-67"));
+                Cliente cliente2 = clienteRepository.save(new Cliente("Maria Gomez", "Martinez", "maria.gomez@gmail.com", "5678", "3107654321", "Calle 234 #56-78"));
+                Cliente cliente3 = clienteRepository.save(new Cliente("Carlos Sanchez", "Hernandez", "carlos.sanchez@gmail.com", "9101", "3109876543", "Calle 345 #67-89"));
+                Cliente cliente4 = clienteRepository.save(new Cliente("Laura Torres", "Ramirez", "laura.torres@gmail.com", "1121", "3101234567", "Calle 456 #78-90"));
+                Cliente cliente5 = clienteRepository.save(new Cliente("Luis Rodriguez", "Diaz", "luis.rodriguez@gmail.com", "3141", "3107654321", "Calle 567 #89-01"));
+
+                Comida comida1 = comidaRepository.findById(1L).get();
+                Comida comida2 = comidaRepository.findById(2L).get();
+                Comida comida3 = comidaRepository.findById(3L).get();
+                Comida comida4 = comidaRepository.findById(4L).get();
+                Comida comida5 = comidaRepository.findById(5L).get();
+                Comida comida6 = comidaRepository.findById(6L).get();
+                Comida comida7 = comidaRepository.findById(7L).get();
+                Comida comida8 = comidaRepository.findById(8L).get();
+
+                // --- Crear pedidos y sus detalles ---
+                
+                // Pedido 1
+                Pedido pedido1 = new Pedido("Preparandose");
+                pedido1.setCliente(cliente1);
+                pedidoRepository.save(pedido1); // Guarda el pedido primero para que tenga un ID
+                
+                DetallePedido detalle1_1 = new DetallePedido(2); // 2 hamburguesas
+                detalle1_1.setPedido(pedido1);
+                detalle1_1.setComida(comida1);
+                detallePedidoRepository.save(detalle1_1);
+
+                DetallePedido detalle1_2 = new DetallePedido(1); // 1 salchipapa
+                detalle1_2.setPedido(pedido1);
+                detalle1_2.setComida(comida2);
+                detallePedidoRepository.save(detalle1_2);
 
 
-                clienteRepository.save(new Cliente("Diego Andres", "Villabon Correa", "diego.villabon@gmail.com", "1234", "3101234567", "Calle 123 #45-67"));
-                clienteRepository.save(new Cliente("Maria Gomez", "Martinez", "maria.gomez@gmail.com", "5678", "3107654321", "Calle 234 #56-78"));
-                clienteRepository.save(new Cliente("Carlos Sanchez", "Hernandez", "carlos.sanchez@gmail.com", "9101", "3109876543", "Calle 345 #67-89"));
-                clienteRepository.save(new Cliente("Laura Torres", "Ramirez", "laura.torres@gmail.com", "1121", "3101234567", "Calle 456 #78-90"));
-                clienteRepository.save(new Cliente("Luis Rodriguez", "Diaz", "luis.rodriguez@gmail.com", "3141", "3107654321", "Calle 567 #89-01"));
+                // Pedido 2
+                Pedido pedido2 = new Pedido("Despachado");
+                pedido2.setCliente(cliente2);
+                pedidoRepository.save(pedido2);
+
+                DetallePedido detalle2_1 = new DetallePedido(3); // 3 de comida 3
+                detalle2_1.setPedido(pedido2);
+                detalle2_1.setComida(comida3);
+                detallePedidoRepository.save(detalle2_1);
+
+                DetallePedido detalle2_2 = new DetallePedido(1); // 1 de comida 4
+                detalle2_2.setPedido(pedido2);
+                detalle2_2.setComida(comida4);
+                detallePedidoRepository.save(detalle2_2);
+                
+                // Pedido 3
+                Pedido pedido3 = new Pedido("Entregado");
+                pedido3.setCliente(cliente3);
+                pedidoRepository.save(pedido3);
+
+                DetallePedido detalle3_1 = new DetallePedido(1); // 1 de comida 5
+                detalle3_1.setPedido(pedido3);
+                detalle3_1.setComida(comida5);
+                detallePedidoRepository.save(detalle3_1);
+
+
+                // Pedido 4
+                Pedido pedido4 = new Pedido("Cancelado");
+                pedido4.setCliente(cliente4);
+                pedidoRepository.save(pedido4);
+                
+                DetallePedido detalle4_1 = new DetallePedido(2); // 2 de comida 6
+                detalle4_1.setPedido(pedido4);
+                detalle4_1.setComida(comida6);
+                detallePedidoRepository.save(detalle4_1);
+                
+                DetallePedido detalle4_2 = new DetallePedido(1); // 1 de comida 7
+                detalle4_2.setPedido(pedido4);
+                detalle4_2.setComida(comida7);
+                detallePedidoRepository.save(detalle4_2);
+                
+
+                // Pedido 5
+                Pedido pedido5 = new Pedido("Preparandose");
+                pedido5.setCliente(cliente5);
+                pedidoRepository.save(pedido5);
+                
+                DetallePedido detalle5_1 = new DetallePedido(1); // 1 de comida 8
+                detalle5_1.setPedido(pedido5);
+                detalle5_1.setComida(comida8);
+                detallePedidoRepository.save(detalle5_1);
+                
+                DetallePedido detalle5_2 = new DetallePedido(3); // 3 de comida 1
+                detalle5_2.setPedido(pedido5);
+                detalle5_2.setComida(comida1);
+                detallePedidoRepository.save(detalle5_2);
 
         }
 

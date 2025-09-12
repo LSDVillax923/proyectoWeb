@@ -1,10 +1,12 @@
 package com.example.demo.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 
 
@@ -18,13 +20,8 @@ public class Comida {
     private Integer precio;
     private String imagenUrl;
 
-
-    @ManyToMany(mappedBy = "comidas")
-    private List<Pedido> pedidos ;
-
-    
-
-
+    @OneToMany(mappedBy = "comida")
+    private List<DetallePedido> detalles = new ArrayList<>();
 
     public Comida() {
     }
@@ -82,13 +79,6 @@ public class Comida {
 
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
-    }
-
-    public List<Pedido> getPedidos() {
-        return pedidos;
-    }
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
     }
 }
 

@@ -11,6 +11,8 @@
             <tr>
                 <th>ID</th>
                 <th>Estado</th>
+                <th>Cliente</th>
+                <th>Comidas</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -18,6 +20,10 @@
             <tr th:each="pedido : ${pedidos}">
                 <td th:text="${pedido.id}">1</td>
                 <td th:text="${pedido.estado}">estado</td>
+                
+                <!-- Mostrar cliente -->
+                <td th:text="${pedido.cliente.nombre} + ' ' + ${pedido.cliente.apellido}">Cliente</td>
+
                 <td>
                     <a th:href="@{/pedido/info/{id}(id=${pedido.id})}">Ver</a>
                     <a th:href="@{/pedido/update/{id}(id=${pedido.id})}">Actualizar</a>
@@ -26,6 +32,7 @@
             </tr>
         </tbody>
     </table>
+
     <a th:href="@{/pedido/add}">Crear Pedido</a>
 </body>
 </html>
