@@ -39,8 +39,8 @@
   </div>
 
   <div class="signin-form">
-    
-     <form th:action="@{/cliente/add}" method="post" th:object="${cliente}">
+
+     <form th:action="@{/sign_in}" method="post" th:object="${cliente}">
          <label for="nombre">Nombres</label>
          <input type="text" th:field="*{nombre}" required>
 
@@ -63,7 +63,7 @@
 
          <button type="submit">Registrarse</button>
           <p class="form-text">¿Ya tienes una cuenta? <a th:href="@{/login}">Ingresa</a></p>
-          
+
      </form>
 
   </div>
