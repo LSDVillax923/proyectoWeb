@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 
 
 @Entity
@@ -17,7 +18,7 @@ public class Pedido {
     private Long id;
     private String estado;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
